@@ -29,7 +29,7 @@ class GameEngine:
         self._clean()
 
     def _create(self):
-        crear_cuadrado(self.ecs_world, pygame.Vector2(100, 100), pygame.Vector2(50, 50), pygame.Vector2(100, 100), pygame.Color(255, 0, 0))
+        crear_cuadrado(self.ecs_world, pygame.Vector2(100, 100), pygame.Vector2(50, 50), pygame.Vector2(100, 100), pygame.Color(196, 90, 249))
 
 
     def _calculate_time(self):
