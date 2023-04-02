@@ -8,19 +8,6 @@ from src.create.prefab_creator import crear_cuadrado
 from src.create.spawner_data import SpawnerData
 
 def system_enemy_spawner(world: esper.World, enemies_info: dict, spawn_info: dict, time: float, spawner_data: SpawnerData):
-    """Spawns enemies in the world every X seconds
-
-    Args:
-        world (esper.World): _description_
-    """
-    
-    # Create a CSpawner
-    # Get the time
-    # If the time is greater than the spawn time
-    # Spawn an enemy
-    # Reset the time
-
-    # Create a CSpawner
     ids = 0
     for enemy in enemies_info:
         for spawn in spawn_info:
