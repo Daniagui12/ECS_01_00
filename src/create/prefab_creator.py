@@ -1,5 +1,6 @@
 import esper
 import pygame
+from src.ecs.components.c_enemy_spawner import CEnemySpawner
 
 from src.ecs.components.c_surface import CSurface
 from src.ecs.components.c_transform import CTransform
