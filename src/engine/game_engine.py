@@ -15,7 +15,10 @@ class GameEngine:
         self.is_running = False
         self.delta_time = 0
         self.ecs_world = esper.World()
-        self.window_info = read_json("././assets/cfg/window.json")["window"]
+        try:
+            self.window_info = read_json("././assets/cfg/window.json")["window"]
+        except:
+            self.window_info = read_json("././assets/cfg/window.json")
         self.enemies_info = read_json("././assets/cfg/enemies.json")
         self.spawn_info = read_json("././assets/cfg/level_01.json")["enemy_spawn_events"]
         self.frame_rate = self._get_framerate()
@@ -39,6 +42,9 @@ class GameEngine:
     def _get_screen(self):
         h = self.window_info["size"]["h"]
         w = self.window_info["size"]["w"]
+        
+        # Set window title
+        pygame.display.set_caption(self.window_info["title"])
         return pygame.display.set_mode((w, h), pygame.SCALED)
         
     def _create(self):
@@ -65,9 +71,9 @@ class GameEngine:
         g = self.window_info["bg_color"]["g"]
         b = self.window_info["bg_color"]["b"]
         self.screen.fill((r, g, b))
-        
         system_rendering(self.ecs_world, self.screen)
         pygame.display.flip()
+
 
     def _clean(self):
         pygame.quit()
